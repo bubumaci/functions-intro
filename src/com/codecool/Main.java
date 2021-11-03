@@ -1,6 +1,5 @@
 package com.codecool;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,65 +7,89 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Peldanyositas es class-ok
-        ArrayList<Person> personList = new ArrayList<>();
-        Person person1 = new Person("Kis Miska", "Budapest, Valami utca 5", 30);
-        personList.add(person1);
-        for (Person p :
-                personList) {
-            System.out.println(p.toString());
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+
+        Calculator calculator = new Calculator();
+
+        calculator.setA(4);
+        calculator.setB(6);
+        System.out.println(calculator.getSum());
+
+        Scanner scanner = new Scanner(System.in);
+        int number;
+        try {
+            number = Integer.parseInt(scanner.nextLine()); // kettő bé --> NumberFormatException
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException exception) {
+            System.out.println(exception);
+            number = 123;
         }
+        System.out.println(number);
+//
+//        int[] array = new int[3];
+//        System.out.println(array[123]);  //ArrayIndexOutOfBoundsException
 
-        int[] result1 = new int[10];
-        char[] ch = new char[10];
-        System.out.println(Arrays.toString(result1));
-        System.out.println(Arrays.toString(ch));
-        ArrayList<Integer> resultArrayList = new ArrayList<>();
 
-//        resultArrayList.get(i);
-//        resultArrayList.add(i+min);
-//        String[] array = resultArrayList.toArray();
-//        resultArrayList.set(i, i + 5);
-
-        for (int i = 0; i < 10; i++) {
-            result1[i] = i + 5;
-            resultArrayList.add(i, i + 5);
-            resultArrayList.set(i, i + 5);
-        }
-
-        System.out.println(Arrays.toString(resultArrayList.toArray()));
-        System.out.println(Arrays.toString(result1));
-
-        String[] stars = new String[10];
-        for (int i = 0; i < stars.length; i++) {
-            stars[i] = String.valueOf(i);
-        }
-
-        String sentence = "ABC";
-        String expected = "a**b**c";
-
-        String result = String.join("**", sentence.split(""));
-        sentence = sentence + "abc";
-        String[] tomb = sentence.split("");
-
-        for (String character : tomb) {
-            System.out.println(character);
-            if ("a".equals(character)) {
-                character += "a";
-            }
-        }
-
-        System.out.println(Arrays.toString(tomb));
-        System.out.println("/\"//\\//'/\n/Users/");
-
-        for (int i = 0; i < tomb.length; i++) {
-            if ("a".equals(tomb[i])) {
-                tomb[i] += "a";
-            }
-        }
-        System.out.println(Arrays.toString(tomb));
-
-        System.out.println("end");
+//
+//        // Peldanyositas es class-ok
+//        ArrayList<Person> personList = new ArrayList<>();
+//        Person person1 = new Person("Kis Miska", "Budapest, Valami utca 5", 30);
+//        personList.add(person1);
+//        for (Person p :
+//                personList) {
+//            System.out.println(p.toString());
+//        }
+//
+//        int[] result1 = new int[10];
+//        char[] ch = new char[10];
+//        System.out.println(Arrays.toString(result1));
+//        System.out.println(Arrays.toString(ch));
+//        ArrayList<Integer> resultArrayList = new ArrayList<>();
+//
+////        resultArrayList.get(i);
+////        resultArrayList.add(i+min);
+////        String[] array = resultArrayList.toArray();
+////        resultArrayList.set(i, i + 5);
+//
+//        for (int i = 0; i < 10; i++) {
+//            result1[i] = i + 5;
+//            resultArrayList.add(i, i + 5);
+//            resultArrayList.set(i, i + 5);
+//        }
+//
+//        System.out.println(Arrays.toString(resultArrayList.toArray()));
+//        System.out.println(Arrays.toString(result1));
+//
+//        String[] stars = new String[10];
+//        for (int i = 0; i < stars.length; i++) {
+//            stars[i] = String.valueOf(i);
+//        }
+//
+//        String sentence = "ABC";
+//        String expected = "a**b**c";
+//
+//        String result = String.join("**", sentence.split(""));
+//        sentence = sentence + "abc";
+//        String[] tomb = sentence.split("");
+//
+//        for (String character : tomb) {
+//            System.out.println(character);
+//            if ("a".equals(character)) {
+//                character += "a";
+//            }
+//        }
+//
+//        System.out.println(Arrays.toString(tomb));
+//        System.out.println("/\"//\\//'/\n/Users/");
+//
+//        for (int i = 0; i < tomb.length; i++) {
+//            if ("a".equals(tomb[i])) {
+//                tomb[i] += "a";
+//            }
+//        }
+//        System.out.println(Arrays.toString(tomb));
+//
+//        System.out.println("end");
     }
 
 
@@ -95,7 +118,6 @@ public class Main {
 
         if (input.equals(szovegbenSzam)) {
             System.out.println("helyes valasz");
-
         } else {
             System.out.println("hamis");
         }
