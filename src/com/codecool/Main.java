@@ -25,8 +25,10 @@ public class Main {
             number = 123;
         }
         System.out.println(number);
-        System.out.println("this will conflict");
+        System.out.println("this will not conflict anymore");
         System.out.println("or at least i hope so");
+        Login login = new Login();
+        login.login();
 //
 //        int[] array = new int[3];
 //        System.out.println(array[123]);  //ArrayIndexOutOfBoundsException
