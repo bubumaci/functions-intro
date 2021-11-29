@@ -25,6 +25,8 @@ public class Main {
             number = 123;
         }
         System.out.println(number);
+        System.out.println("this will conflict");
+        System.out.println("or at least i hope so");
 //
 //        int[] array = new int[3];
 //        System.out.println(array[123]);  //ArrayIndexOutOfBoundsException
